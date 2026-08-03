@@ -1,0 +1,18 @@
+# python
+venv/
+__pycache__/
+*.pyc
+.python-version
+
+# mac / editor
+.DS_Store
+.idea/
+.vscode/
+*.swp
+
+# jupyter
+.ipynb_checkpoints/
+
+# local secrets / junk
+*.log
+.env
