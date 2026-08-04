@@ -77,7 +77,6 @@ docker pull repo:tag
 - 강의: [Tips make life easier](https://dreamhack.io/lecture/units/tips-make-life-easier) — Netcat / SSH / 코딩 / Docker / 정규표현식  
 - 강의: [정규표현식 #461](https://learn.dreamhack.io/461)
 - 워게임: #812, #875, #876, #853, #834, #873
-- `war_game/` 정리 (`이름_번호/`)
 - 자세한 메모: [log_for_study/2026-08-04.md](log_for_study/2026-08-04.md)
 
 ### 2026-08-03
