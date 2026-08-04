@@ -6,27 +6,68 @@
 
 ---
 
+## 기초 팁 (Tips make life easier)
+
+강의: [해킹 입문, 기초 팁](https://dreamhack.io/lecture/units/tips-make-life-easier)  
+통합 정리: [log_for_study/tips-make-life-easier.md](log_for_study/tips-make-life-easier.md)
+
+| 주제 | 한 줄 | 대표 명령 | 연결 문제 |
+|------|--------|-----------|-----------|
+| **Netcat** | TCP로 서버 접속 | `ncat host port` | [#812](https://dreamhack.io/wargame/challenges/812) |
+| **SSH** | 원격 셸 로그인 | `ssh user@host -p port` | [#875](https://dreamhack.io/wargame/challenges/875) |
+| **코딩** | 소스·스크립트 에디터 | VS Code, Vim | 전 문제 소스 읽기 |
+| **Docker** | 이미지 / 컨테이너 / 레이어 | `build` `run` `pull` | [#876](https://dreamhack.io/wargame/challenges/876), [#853](https://dreamhack.io/wargame/challenges/853) |
+| **정규표현식** | 패턴 검증·필터 | `\w` `\d` `preg_*` | [#834](https://dreamhack.io/wargame/challenges/834), [#873](https://dreamhack.io/wargame/challenges/873) |
+
+### 치트시트
+
+```bash
+# Netcat (Windows: ncat)
+ncat host3.dreamhack.games PORT
+
+# SSH
+ssh chall@host3.dreamhack.games -p PORT
+
+# Docker (Desktop 실행 후 Server 확인)
+docker version
+docker build -t name .
+docker run -it name /bin/bash
+docker pull repo:tag
+
+# 정규식 예 (#834)
+# drabcdee1am@abc.com
+
+# PHP 필터 우회 예 (#873)
+# Nickname: dnnyangyang0310
+# Password: 0@12319!+1+13
+# Command:  cat ../dream/????.txt
+```
+
+포트 `A/tcp → B/tcp` → 접속은 **A**.  
+웹 문제는 브라우저 `http://host:port`.
+
+---
+
 ## 폴더 구조
 
 ```
 .
 ├── war_game/                    # 문제별: 이름_번호/
-│   ├── welcome-beginners_812/
-│   ├── exercise-ssh_875/
-│   ├── exercise-docker_876/
-│   ├── blue-whale_853/
-│   ├── ex-reg-ex_834/
-│   ├── phpreg_873/
+│   ├── welcome-beginners_812/   # Netcat
+│   ├── exercise-ssh_875/        # SSH
+│   ├── exercise-docker_876/     # Docker 빌드
+│   ├── blue-whale_853/          # Docker 레이어
+│   ├── ex-reg-ex_834/           # Regex 맞춤
+│   ├── phpreg_873/              # Regex 필터 우회
 │   ├── addition-quiz_1114/
 │   └── flag-shop_1874/
-└── log_for_study/               # 날짜별 공부 정리
+└── log_for_study/
+    ├── tips-make-life-easier.md # 기초 팁 본문
+    ├── 2026-08-03.md
+    └── 2026-08-04.md
 ```
 
-각 문제 폴더 관례:
-
-- `README.md` — 풀이 요약
-- `original.zip` — 드림핵에서 받은 원본 (있을 때)
-- 소스 / 스크립트 — 문제 유형에 따라
+각 문제 폴더: `README.md`, `original.zip`(있을 때), 소스/스크립트.
 
 ---
 
@@ -34,24 +75,23 @@
 
 ### 2026-08-04
 
-- 이 노트북으로 레포 이전 후 이어서 공부
-- 강의
-  - [정규표현식 (learn #461)](https://learn.dreamhack.io/461) — 메타문자, 수량자, `re` 모듈
-- 워게임
-  - Welcome-Beginners (#812) — `ncat` → `Dreamhack` 입력
-  - Exercise: SSH (#875) — OpenSSH → `cat flag`
-  - Exercise: Docker (#876) — 로컬 `docker build` / `run`
-  - blue-whale (#853) — Hub 이미지 레이어 분석
-  - ex-reg-ex (#834) — 정규식에 맞는 문자열 입력
-  - phpreg (#873) — PHP 필터 우회 → `system()` + 와일드카드
-- `war_game/` 정리 (`이름_번호/`, `original.zip`)
+- 강의: [Tips make life easier](https://dreamhack.io/lecture/units/tips-make-life-easier) — Netcat / SSH / 코딩 / Docker / 정규표현식  
+  → [tips-make-life-easier.md](log_for_study/tips-make-life-easier.md)
+- 강의: [정규표현식 #461](https://learn.dreamhack.io/461)
+- 워게임 (위 주제와 연결)
+  - #812 Welcome — `ncat`
+  - #875 SSH — OpenSSH
+  - #876 Docker — 로컬 build/run
+  - #853 blue-whale — 이미지 레이어
+  - #834 ex-reg-ex — 정규식 입력
+  - #873 phpreg — PHP 필터 우회 + `system()`
+- `war_game/` 정리 (`이름_번호/`)
 - 자세한 메모: [log_for_study/2026-08-04.md](log_for_study/2026-08-04.md)
 
 ### 2026-08-03
 
-- pwntools 기본 사용법 정리
-- 워게임: addition-quiz (#1114), flag-shop (#1874)
-- 자세한 메모: [log_for_study/2026-08-03.md](log_for_study/2026-08-03.md)
+- pwntools 기본, addition-quiz (#1114), flag-shop (#1874)
+- [log_for_study/2026-08-03.md](log_for_study/2026-08-03.md)
 
 ---
 
@@ -75,10 +115,6 @@ docker run -it dreamhack-docker /bin/bash
 cd war_game/blue-whale_853
 powershell -ExecutionPolicy Bypass -File .\start-docker.ps1
 powershell -ExecutionPolicy Bypass -File .\solve.ps1
-
-# ex-reg-ex (#834) — 예: drabcdee1am@abc.com  (드림핵 웹 서버)
-# phpreg (#873) — Nickname dnnyangyang0310 / Password 0@12319!+1+13
-#                 Command: cat ../dream/????.txt
 ```
 
 ---
@@ -87,4 +123,5 @@ powershell -ExecutionPolicy Bypass -File .\solve.ps1
 
 - [Dreamhack](https://dreamhack.io/)
 - [Wargame](https://dreamhack.io/wargame/)
+- [Tips make life easier](https://dreamhack.io/lecture/units/tips-make-life-easier)
 - [정규표현식 강의 #461](https://learn.dreamhack.io/461)
