@@ -16,3 +16,8 @@ __pycache__/
 # local secrets / junk
 *.log
 .env
+
+# docker layer extract (large)
+war_game/**/_extract/
+war_game/**/_work/
+*.tar

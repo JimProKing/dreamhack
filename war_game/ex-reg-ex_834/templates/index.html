@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>ex-reg-ex</title>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 640px; margin: 2rem auto; padding: 0 1rem; }
+    input[type=text] { width: 100%; padding: 0.5rem; font-size: 1rem; }
+    button { margin-top: 0.5rem; padding: 0.5rem 1rem; }
+    .flag { margin-top: 1rem; padding: 1rem; background: #f0f4ff; border-radius: 8px; word-break: break-all; }
+    code { background: #eee; padding: 0.1rem 0.3rem; }
+  </style>
+</head>
+<body>
+  <h1>ex-reg-ex</h1>
+  <p>정규식에 맞는 문자열을 입력하세요.</p>
+  <p><code>dr\w{5,7}e\d+am@[a-z]{3,7}\.\w+</code></p>
+
+  <form method="POST" action="/">
+    <label>
+      input:
+      <input type="text" name="input_val" value="{{ pre_txt }}" placeholder="예: drabcdee1am@abc.com" />
+    </label>
+    <button type="submit">Submit</button>
+  </form>
+
+  <div class="flag">
+    <strong>flag:</strong> {{ flag }}
+  </div>
+</body>
+</html>
