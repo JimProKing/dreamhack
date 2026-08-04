@@ -9,7 +9,7 @@
 ## 기초 팁 (Tips make life easier)
 
 강의: [해킹 입문, 기초 팁](https://dreamhack.io/lecture/units/tips-make-life-easier)  
-통합 정리: [log_for_study/tips-make-life-easier.md](log_for_study/tips-make-life-easier.md)
+상세: [log_for_study/2026-08-04.md](log_for_study/2026-08-04.md) 의 **강의: Tips make life easier** 절
 
 | 주제 | 한 줄 | 대표 명령 | 연결 문제 |
 |------|--------|-----------|-----------|
@@ -62,9 +62,8 @@ docker pull repo:tag
 │   ├── addition-quiz_1114/
 │   └── flag-shop_1874/
 └── log_for_study/
-    ├── tips-make-life-easier.md # 기초 팁 본문
     ├── 2026-08-03.md
-    └── 2026-08-04.md
+    └── 2026-08-04.md            # Tips + 워게임 풀이 전부
 ```
 
 각 문제 폴더: `README.md`, `original.zip`(있을 때), 소스/스크립트.
@@ -76,15 +75,8 @@ docker pull repo:tag
 ### 2026-08-04
 
 - 강의: [Tips make life easier](https://dreamhack.io/lecture/units/tips-make-life-easier) — Netcat / SSH / 코딩 / Docker / 정규표현식  
-  → [tips-make-life-easier.md](log_for_study/tips-make-life-easier.md)
 - 강의: [정규표현식 #461](https://learn.dreamhack.io/461)
-- 워게임 (위 주제와 연결)
-  - #812 Welcome — `ncat`
-  - #875 SSH — OpenSSH
-  - #876 Docker — 로컬 build/run
-  - #853 blue-whale — 이미지 레이어
-  - #834 ex-reg-ex — 정규식 입력
-  - #873 phpreg — PHP 필터 우회 + `system()`
+- 워게임: #812, #875, #876, #853, #834, #873
 - `war_game/` 정리 (`이름_번호/`)
 - 자세한 메모: [log_for_study/2026-08-04.md](log_for_study/2026-08-04.md)
 
