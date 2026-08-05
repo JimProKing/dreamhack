@@ -59,11 +59,13 @@ docker pull repo:tag
 │   ├── blue-whale_853/          # Docker 레이어
 │   ├── ex-reg-ex_834/           # Regex 맞춤
 │   ├── phpreg_873/              # Regex 필터 우회
+│   ├── baby-linux_837/          # 리눅스 명령 + glob 우회
 │   ├── addition-quiz_1114/
 │   └── flag-shop_1874/
 └── log_for_study/
     ├── 2026-08-03.md
-    └── 2026-08-04.md            # Tips + 워게임 풀이 전부
+    ├── 2026-08-04.md
+    └── 2026-08-05.md            # baby-linux + 리눅스 기본 명령
 ```
 
 각 문제 폴더: `README.md`, `original.zip`(있을 때), 소스/스크립트.
@@ -71,6 +73,12 @@ docker pull repo:tag
 ---
 
 ## 일자별 공부
+
+### 2026-08-05
+
+- 워게임: [baby-linux (#837)](https://dreamhack.io/wargame/challenges/837) — `flag` 필터 + `cat path/*`
+- 리눅스 기본 명령 (`ls`, `cd`, `cat`, glob 등)
+- 자세한 메모: [log_for_study/2026-08-05.md](log_for_study/2026-08-05.md)
 
 ### 2026-08-04
 
