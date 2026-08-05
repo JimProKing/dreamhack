@@ -77,8 +77,7 @@ docker pull repo:tag
 ### 2026-08-05
 
 - 워게임: [baby-linux (#837)](https://dreamhack.io/wargame/challenges/837) — `flag` 필터 + glob / `tail`
-- Linux Lab: ELF `hello` (`gcc`), `ps` 상태 코드 (`R`), `kill PID`
-- 리눅스: `ps aux` / `ps -el`, grep 함정, `kill` vs 이름
+- Linux Lab: ELF `hello`, `ps`/`kill`, `ls -al` 숨김 파일, `mkdir`/`rmdir`
 - 자세한 메모: [log_for_study/2026-08-05.md](log_for_study/2026-08-05.md)
 
 ### 2026-08-04
