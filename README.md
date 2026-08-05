@@ -52,20 +52,24 @@ docker pull repo:tag
 
 ```
 .
+├── linux_101/                   # Path: Linux 101 정리
+│   ├── README.md                # 유닛 목차
+│   ├── 01~08-*.md               # 유닛별 노트
+│   └── commands-cheatsheet.md
 ├── war_game/                    # 문제별: 이름_번호/
-│   ├── welcome-beginners_812/   # Netcat
-│   ├── exercise-ssh_875/        # SSH
-│   ├── exercise-docker_876/     # Docker 빌드
-│   ├── blue-whale_853/          # Docker 레이어
-│   ├── ex-reg-ex_834/           # Regex 맞춤
-│   ├── phpreg_873/              # Regex 필터 우회
-│   ├── baby-linux_837/          # 리눅스 명령 + glob 우회
+│   ├── welcome-beginners_812/
+│   ├── exercise-ssh_875/
+│   ├── exercise-docker_876/
+│   ├── blue-whale_853/
+│   ├── ex-reg-ex_834/
+│   ├── phpreg_873/
+│   ├── baby-linux_837/
 │   ├── addition-quiz_1114/
 │   └── flag-shop_1874/
 └── log_for_study/
     ├── 2026-08-03.md
     ├── 2026-08-04.md
-    └── 2026-08-05.md            # baby-linux + 리눅스 기본 명령
+    └── 2026-08-05.md
 ```
 
 각 문제 폴더: `README.md`, `original.zip`(있을 때), 소스/스크립트.
@@ -76,10 +80,10 @@ docker pull repo:tag
 
 ### 2026-08-05
 
+- Path: [Linux 101](https://dreamhack.io/lecture/paths/linux-101) → 정리 폴더 [linux_101/](linux_101/)
 - 워게임: [baby-linux (#837)](https://dreamhack.io/wargame/challenges/837)
-- Linux Lab: ELF / `ps` / `kill` / 디렉터리·숨김 파일
-- [File Descriptor 랩](https://dreamhack.io/lecture/units/file-descriptors): fd, pipe, grep, 리다이렉션
-- 자세한 메모: [log_for_study/2026-08-05.md](log_for_study/2026-08-05.md)
+- Lab: 파일·디렉터리, 프로세스, 파일 디스크립터 (fd / pipe / grep)
+- 일자 로그: [log_for_study/2026-08-05.md](log_for_study/2026-08-05.md)
 
 ### 2026-08-04
 
@@ -123,5 +127,6 @@ powershell -ExecutionPolicy Bypass -File .\solve.ps1
 
 - [Dreamhack](https://dreamhack.io/)
 - [Wargame](https://dreamhack.io/wargame/)
+- [Linux 101 Path](https://dreamhack.io/lecture/paths/linux-101)
 - [Tips make life easier](https://dreamhack.io/lecture/units/tips-make-life-easier)
 - [정규표현식 강의 #461](https://learn.dreamhack.io/461)
