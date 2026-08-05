@@ -76,8 +76,9 @@ docker pull repo:tag
 
 ### 2026-08-05
 
-- 워게임: [baby-linux (#837)](https://dreamhack.io/wargame/challenges/837) — `flag` 필터 + glob / `tail`
-- Linux Lab: ELF `hello`, `ps`/`kill`, `ls -al` 숨김 파일, `mkdir`/`rmdir`
+- 워게임: [baby-linux (#837)](https://dreamhack.io/wargame/challenges/837)
+- Linux Lab: ELF / `ps` / `kill` / 디렉터리·숨김 파일
+- [File Descriptor 랩](https://dreamhack.io/lecture/units/file-descriptors): fd, pipe, grep, 리다이렉션
 - 자세한 메모: [log_for_study/2026-08-05.md](log_for_study/2026-08-05.md)
 
 ### 2026-08-04
