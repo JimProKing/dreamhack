@@ -76,8 +76,9 @@ docker pull repo:tag
 
 ### 2026-08-05
 
-- 워게임: [baby-linux (#837)](https://dreamhack.io/wargame/challenges/837) — `flag` 필터 + `cat path/*`
-- 리눅스 기본 명령 (`ls`, `cd`, `cat`, glob 등)
+- 워게임: [baby-linux (#837)](https://dreamhack.io/wargame/challenges/837) — `flag` 필터 + glob / `tail`
+- 리눅스 기본 명령 (`ls`, `cd`, `cat`, `head`, `tail`, glob)
+- 터미널 색(ANSI)으로 숨긴 문자열 — `tail` 또는 드래그 선택
 - 자세한 메모: [log_for_study/2026-08-05.md](log_for_study/2026-08-05.md)
 
 ### 2026-08-04
