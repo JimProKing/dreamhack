@@ -16,7 +16,7 @@
 | 관찰 → 가설 → 검증 | 추측만 쓰지 않고, 출력·소스·레이어로 확인한 뒤 기록 |
 | 자동화는 도구 | 반복 입출력·시간 제약은 스크립트로 두고, 핵심 이해는 문서로 |
 
-세부 일지는 `log_for_study/`, 재사용 노트는 `linux_101/`, 문제 단위 산출물은 `war_game/` 에 둡니다.
+세부 일지는 `log_for_study/`, 재사용 노트는 `linux_101/` · `web_basics/`, 문제 단위 산출물은 `war_game/` 에 둡니다.
 
 ---
 
@@ -26,7 +26,8 @@
 .
 ├── README.md                 # 이 문서 (맵 + 관례)
 ├── requirements.txt          # Python 의존성
-├── linux_101/                # Linux 101 Path — 시스템 기초 노트
+├── linux_101/                # Linux 101 Path — 시스템 기초 (완료)
+├── web_basics/               # 웹·HTTP·쿠키·세션·SOP
 ├── war_game/                 # 워게임 단위 분석·풀이 (이름_번호/)
 └── log_for_study/            # 일자별 학습 로그
 ```
@@ -34,6 +35,7 @@
 | 경로 | 역할 |
 |------|------|
 | [`linux_101/`](linux_101/) | 셸, 파일·권한, 프로세스, fd, 사용자 — **시스템 관찰의 공통 기반** |
+| [`web_basics/`](web_basics/) | HTTP/HTTPS, DevTools, Cookie·Session, SOP/CORS |
 | [`war_game/`](war_game/) | 문제별 소스, 스크립트, 분석 메모. 인덱스: [`war_game/README.md`](war_game/README.md) |
 | [`log_for_study/`](log_for_study/) | 그날 한 일, 시행착오, 강의 정리. 관례: [`log_for_study/README.md`](log_for_study/README.md) |
 
@@ -44,25 +46,29 @@
 
 ## 다루는 영역
 
-기초부터 쌓는 순서와, 지금까지 손댄 주제를 영역별로 묶었습니다.
-
 ```text
-Linux 시스템 기초
+Linux 시스템 기초                          (linux_101 — Path 완료)
   └─ 셸 · 파일/권한 · 프로세스 · fd/pipe · 사용자
        │
-       ├─ 원격 접속 · 네트워크 도구     (Netcat, SSH)
-       ├─ 컨테이너 구조 · 아티팩트      (Docker 이미지/레이어)
-       ├─ 입력 검증 · 필터 분석         (정규식, 웹 필터)
-       └─ 프로토콜 자동화               (pwntools, 스크립트)
+       ├─ 원격 접속 · 네트워크 도구         (Netcat, SSH)
+       ├─ 컨테이너 구조 · 아티팩트          (Docker 이미지/레이어)
+       ├─ 입력 검증 · 필터 분석             (정규식, 웹 필터)
+       ├─ 프로토콜 자동화                   (pwntools, 스크립트)
+       │
+       └─ 웹 기초 · 인증 상태               (web_basics)
+            HTTP/HTTPS · DevTools
+            Cookie · Session · SOP/CORS
 ```
 
 | 영역 | 무엇을 보나 | 노트 / 문제 |
 |------|-------------|-------------|
-| **시스템 기초** | 경로, 권한, 프로세스 상태, fd, 리다이렉션 | [`linux_101/`](linux_101/), [#837](https://dreamhack.io/wargame/challenges/837) |
+| **시스템 기초** | 경로, 권한, 프로세스, fd, 리다이렉션 | [`linux_101/`](linux_101/), [#837](https://dreamhack.io/wargame/challenges/837) |
+| **웹 기초** | HTTP 요청·응답, 브라우저, DevTools | [`web_basics/`](web_basics/), [#267](https://dreamhack.io/wargame/challenges/267) |
+| **인증 상태** | 쿠키·세션, 변조·신뢰 경계, SOP/CORS | [`web_basics/03`](web_basics/03-cookie-session.md)–[`04`](web_basics/04-sop-cors.md), [#6](https://dreamhack.io/wargame/challenges/6), [#409](https://dreamhack.io/wargame/challenges/409) |
 | **원격 상호작용** | TCP 접속, 원격 셸, 포트 매핑 | [#812](https://dreamhack.io/wargame/challenges/812), [#875](https://dreamhack.io/wargame/challenges/875) |
-| **컨테이너** | 이미지 레이어, whiteout, 삭제 전 잔존 데이터 | [#876](https://dreamhack.io/wargame/challenges/876), [#853](https://dreamhack.io/wargame/challenges/853) |
-| **입력 검증** | 정규식 분해, 필터 우회 조건, 의도된 검증 공백 | [#834](https://dreamhack.io/wargame/challenges/834), [#873](https://dreamhack.io/wargame/challenges/873) |
-| **자동화** | 반복 입출력, 시간 제약, 바이너리/프로토콜 I/O | [#1114](https://dreamhack.io/wargame/challenges/1114), [#1874](https://dreamhack.io/wargame/challenges/1874) |
+| **컨테이너** | 이미지 레이어, whiteout, 잔존 데이터 | [#876](https://dreamhack.io/wargame/challenges/876), [#853](https://dreamhack.io/wargame/challenges/853) |
+| **입력 검증** | 정규식 분해, 필터 우회 조건 | [#834](https://dreamhack.io/wargame/challenges/834), [#873](https://dreamhack.io/wargame/challenges/873) |
+| **자동화** | 반복 입출력, 시간 제약, 프로토콜 I/O | [#1114](https://dreamhack.io/wargame/challenges/1114), [#1874](https://dreamhack.io/wargame/challenges/1874) |
 
 전체 문제 표: [`war_game/README.md`](war_game/README.md)
 
@@ -81,6 +87,9 @@ Linux 시스템 기초
 | [837](https://dreamhack.io/wargame/challenges/837) | baby-linux | Linux | 글로브, 출력 채널, 숨김 표현 |
 | [1114](https://dreamhack.io/wargame/challenges/1114) | addition-quiz | Misc / pwn | 시간 제약 + 반복 응답 자동화 |
 | [1874](https://dreamhack.io/wargame/challenges/1874) | flag-shop | Misc | 상태 추적 + 스크립트 자동화 |
+| [267](https://dreamhack.io/wargame/challenges/267) | devtools-sources | Web / DevTools | Sources 패널 리소스 관찰 *(유닛 연계)* |
+| [6](https://dreamhack.io/wargame/challenges/6) | cookie | Web / Cookie | 쿠키 인증·변조 *(유닛 연계)* |
+| [409](https://dreamhack.io/wargame/challenges/409) | session-basic | Web / Session | 세션 + 쿠키 ID *(유닛 연계)* |
 
 ---
 
@@ -88,6 +97,7 @@ Linux 시스템 기초
 
 | 날짜 | 요약 | 로그 |
 |------|------|------|
+| 2026-08-06 | Linux 101 Path 완료, 웹 기초, Cookie·Session·SOP | [log](log_for_study/2026-08-06.md) |
 | 2026-08-05 | Linux 101 Path, Lab(파일·프로세스·fd), baby-linux | [log](log_for_study/2026-08-05.md) |
 | 2026-08-04 | Tips (nc/SSH/Docker/regex), 입문 워게임 6문제 | [log](log_for_study/2026-08-04.md) |
 | 2026-08-03 | pwntools 기초, addition-quiz, flag-shop | [log](log_for_study/2026-08-03.md) |
@@ -106,6 +116,7 @@ Linux 시스템 기초
 | **Docker** | 이미지·컨테이너·레이어 | `build` / `run` / `pull` |
 | **정규식** | 패턴 검증·필터 표현 | `\w` `\d` `preg_*` / `re` |
 | **pwntools** | 프로세스·소켓 I/O 자동화 | `remote()`, `recv*`, `sendline` |
+| **DevTools** | 요청·쿠키·스크립트 관찰 | Network / Application / Sources |
 
 ```bash
 # 접속
@@ -119,10 +130,11 @@ docker run -it name /bin/bash
 docker pull repo:tag
 
 # 포트 A/tcp → B/tcp 이면 접속 포트는 A
-# 웹 문제: 브라우저 http://host:port
+# 웹 문제: 브라우저 http://host:port  + F12 DevTools
 ```
 
-Linux 명령 요약: [`linux_101/commands-cheatsheet.md`](linux_101/commands-cheatsheet.md)
+Linux 명령 요약: [`linux_101/commands-cheatsheet.md`](linux_101/commands-cheatsheet.md)  
+웹 기초 맵: [`web_basics/README.md`](web_basics/README.md)
 
 ---
 
@@ -163,7 +175,7 @@ powershell -ExecutionPolicy Bypass -File .\solve.ps1
 4. **절차** — 재현 가능한 단계  
 5. **왜 되는지** — 우회·성공 조건의 근거  
 
-일자 로그에는 시행착오와 강의 맥락을, 문제 폴더에는 **나중에 다시 쓸 결론**을 모읍니다.
+일자 로그에는 시행착오와 강의 맥락을, 주제 폴더(`linux_101/`, `web_basics/`)와 문제 폴더에는 **나중에 다시 쓸 결론**을 모읍니다.
 
 ---
 
@@ -171,6 +183,8 @@ powershell -ExecutionPolicy Bypass -File .\solve.ps1
 
 - [Dreamhack](https://dreamhack.io/) · [Wargame](https://dreamhack.io/wargame/)
 - [Linux 101 Path](https://dreamhack.io/lecture/paths/linux-101)
+- [웹 해킹을 위한 웹 기초 지식](https://dreamhack.io/lecture/units/webhacking-basic-knowledeges)
+- [Cookie & Session](https://dreamhack.io/lecture/units/webhacking-cookie-session)
 - [Tips make life easier](https://dreamhack.io/lecture/units/tips-make-life-easier)
 - [정규표현식 강의 #461](https://learn.dreamhack.io/461)
 - [pwntools 문서](https://docs.pwntools.com/)

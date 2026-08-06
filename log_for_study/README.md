@@ -15,6 +15,7 @@
 | [2026-08-03.md](2026-08-03.md) | pwntools, addition-quiz, flag-shop |
 | [2026-08-04.md](2026-08-04.md) | Tips (nc/SSH/Docker/regex), 입문 워게임 |
 | [2026-08-05.md](2026-08-05.md) | Linux 101, Lab, baby-linux |
+| [2026-08-06.md](2026-08-06.md) | Linux 101 Path 완료, 웹 기초, Cookie·Session·SOP |
 
 ---
 

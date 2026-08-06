@@ -26,7 +26,9 @@
 |------|------|
 | 명령 치트시트 | [commands-cheatsheet.md](./commands-cheatsheet.md) |
 | 워게임 baby-linux | [#837](https://dreamhack.io/wargame/challenges/837) → [../war_game/baby-linux_837](../war_game/baby-linux_837/) |
-| 일자 로그 | [../log_for_study/2026-08-05.md](../log_for_study/2026-08-05.md) |
+| 일자 로그 | [2026-08-05](../log_for_study/2026-08-05.md) (Lab·baby-linux), [2026-08-06](../log_for_study/2026-08-06.md) (**Path 완료**) |
+
+**상태:** Path 학습 완료 (2026-08-06)
 
 ---
 
