@@ -1,0 +1,2 @@
+# Python tooling for wargame automation / local analysis
+pwntools>=4.15.0

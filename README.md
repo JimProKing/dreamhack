@@ -1,132 +1,176 @@
-# Dreamhack 공부
+# dreamhack
 
-드림핵 강의랑 워게임 풀면서 정리하는 레포.
+[Dreamhack](https://dreamhack.io/) 강의·Path·워게임을 풀며, **동작 원리와 재현 절차**를 남기는 학습 노트 저장소입니다.
 
-시작일: 2026-08-03
+목표 점수가 아니라 **왜 되는지 / 어디서 막히는지 / 어떻게 다시 확인하는지**를 남깁니다.  
+시작: 2026-08-03
 
 ---
 
-## 기초 팁 (Tips make life easier)
+## 학습 원칙
 
-강의: [해킹 입문, 기초 팁](https://dreamhack.io/lecture/units/tips-make-life-easier)  
-상세: [log_for_study/2026-08-04.md](log_for_study/2026-08-04.md) 의 **강의: Tips make life easier** 절
+| 원칙 | 의미 |
+|------|------|
+| 메커니즘 우선 | 플래그보다 필터, 레이어, 권한, fd, 프로토콜이 어떻게 동작하는지 |
+| 재현 가능 | 다른 날에도 같은 순서로 검증할 수 있게 명령·경로·조건을 고정 |
+| 관찰 → 가설 → 검증 | 추측만 쓰지 않고, 출력·소스·레이어로 확인한 뒤 기록 |
+| 자동화는 도구 | 반복 입출력·시간 제약은 스크립트로 두고, 핵심 이해는 문서로 |
 
-| 주제 | 한 줄 | 대표 명령 | 연결 문제 |
-|------|--------|-----------|-----------|
-| **Netcat** | TCP로 서버 접속 | `ncat host port` | [#812](https://dreamhack.io/wargame/challenges/812) |
-| **SSH** | 원격 셸 로그인 | `ssh user@host -p port` | [#875](https://dreamhack.io/wargame/challenges/875) |
-| **코딩** | 소스·스크립트 에디터 | VS Code, Vim | 전 문제 소스 읽기 |
-| **Docker** | 이미지 / 컨테이너 / 레이어 | `build` `run` `pull` | [#876](https://dreamhack.io/wargame/challenges/876), [#853](https://dreamhack.io/wargame/challenges/853) |
-| **정규표현식** | 패턴 검증·필터 | `\w` `\d` `preg_*` | [#834](https://dreamhack.io/wargame/challenges/834), [#873](https://dreamhack.io/wargame/challenges/873) |
+세부 일지는 `log_for_study/`, 재사용 노트는 `linux_101/`, 문제 단위 산출물은 `war_game/` 에 둡니다.
 
-### 치트시트
+---
+
+## 저장소 구조
+
+```text
+.
+├── README.md                 # 이 문서 (맵 + 관례)
+├── requirements.txt          # Python 의존성
+├── linux_101/                # Linux 101 Path — 시스템 기초 노트
+├── war_game/                 # 워게임 단위 분석·풀이 (이름_번호/)
+└── log_for_study/            # 일자별 학습 로그
+```
+
+| 경로 | 역할 |
+|------|------|
+| [`linux_101/`](linux_101/) | 셸, 파일·권한, 프로세스, fd, 사용자 — **시스템 관찰의 공통 기반** |
+| [`war_game/`](war_game/) | 문제별 소스, 스크립트, 분석 메모. 인덱스: [`war_game/README.md`](war_game/README.md) |
+| [`log_for_study/`](log_for_study/) | 그날 한 일, 시행착오, 강의 정리. 관례: [`log_for_study/README.md`](log_for_study/README.md) |
+
+문제 폴더 이름: `{slug}_{challenge_id}/`  
+예: `blue-whale_853/`, `baby-linux_837/`
+
+---
+
+## 다루는 영역
+
+기초부터 쌓는 순서와, 지금까지 손댄 주제를 영역별로 묶었습니다.
+
+```text
+Linux 시스템 기초
+  └─ 셸 · 파일/권한 · 프로세스 · fd/pipe · 사용자
+       │
+       ├─ 원격 접속 · 네트워크 도구     (Netcat, SSH)
+       ├─ 컨테이너 구조 · 아티팩트      (Docker 이미지/레이어)
+       ├─ 입력 검증 · 필터 분석         (정규식, 웹 필터)
+       └─ 프로토콜 자동화               (pwntools, 스크립트)
+```
+
+| 영역 | 무엇을 보나 | 노트 / 문제 |
+|------|-------------|-------------|
+| **시스템 기초** | 경로, 권한, 프로세스 상태, fd, 리다이렉션 | [`linux_101/`](linux_101/), [#837](https://dreamhack.io/wargame/challenges/837) |
+| **원격 상호작용** | TCP 접속, 원격 셸, 포트 매핑 | [#812](https://dreamhack.io/wargame/challenges/812), [#875](https://dreamhack.io/wargame/challenges/875) |
+| **컨테이너** | 이미지 레이어, whiteout, 삭제 전 잔존 데이터 | [#876](https://dreamhack.io/wargame/challenges/876), [#853](https://dreamhack.io/wargame/challenges/853) |
+| **입력 검증** | 정규식 분해, 필터 우회 조건, 의도된 검증 공백 | [#834](https://dreamhack.io/wargame/challenges/834), [#873](https://dreamhack.io/wargame/challenges/873) |
+| **자동화** | 반복 입출력, 시간 제약, 바이너리/프로토콜 I/O | [#1114](https://dreamhack.io/wargame/challenges/1114), [#1874](https://dreamhack.io/wargame/challenges/1874) |
+
+전체 문제 표: [`war_game/README.md`](war_game/README.md)
+
+---
+
+## 워게임 현황
+
+| ID | 문제 | 영역 | 핵심 포인트 |
+|----|------|------|-------------|
+| [812](https://dreamhack.io/wargame/challenges/812) | welcome-beginners | Netcat | TCP 접속, 포트 해석 |
+| [875](https://dreamhack.io/wargame/challenges/875) | exercise-ssh | SSH | 원격 셸 로그인 |
+| [876](https://dreamhack.io/wargame/challenges/876) | exercise-docker | Docker | 로컬 빌드·실행 |
+| [853](https://dreamhack.io/wargame/challenges/853) | blue-whale | Docker | 레이어 잔존, whiteout |
+| [834](https://dreamhack.io/wargame/challenges/834) | ex-reg-ex | Regex | 패턴 분해·매칭 문자열 구성 |
+| [873](https://dreamhack.io/wargame/challenges/873) | phpreg | Web / Regex | 필터 조건 분석, 명령 주입 경로 |
+| [837](https://dreamhack.io/wargame/challenges/837) | baby-linux | Linux | 글로브, 출력 채널, 숨김 표현 |
+| [1114](https://dreamhack.io/wargame/challenges/1114) | addition-quiz | Misc / pwn | 시간 제약 + 반복 응답 자동화 |
+| [1874](https://dreamhack.io/wargame/challenges/1874) | flag-shop | Misc | 상태 추적 + 스크립트 자동화 |
+
+---
+
+## 일자별 기록
+
+| 날짜 | 요약 | 로그 |
+|------|------|------|
+| 2026-08-05 | Linux 101 Path, Lab(파일·프로세스·fd), baby-linux | [log](log_for_study/2026-08-05.md) |
+| 2026-08-04 | Tips (nc/SSH/Docker/regex), 입문 워게임 6문제 | [log](log_for_study/2026-08-04.md) |
+| 2026-08-03 | pwntools 기초, addition-quiz, flag-shop | [log](log_for_study/2026-08-03.md) |
+
+---
+
+## 기초 도구 치트시트
+
+강의: [Tips make life easier](https://dreamhack.io/lecture/units/tips-make-life-easier)  
+상세 정리: [log_for_study/2026-08-04.md](log_for_study/2026-08-04.md)
+
+| 도구 | 한 줄 | 대표 사용 |
+|------|--------|-----------|
+| **Netcat** | TCP로 서비스에 붙기 | `ncat host port` |
+| **SSH** | 암호화된 원격 셸 | `ssh user@host -p port` |
+| **Docker** | 이미지·컨테이너·레이어 | `build` / `run` / `pull` |
+| **정규식** | 패턴 검증·필터 표현 | `\w` `\d` `preg_*` / `re` |
+| **pwntools** | 프로세스·소켓 I/O 자동화 | `remote()`, `recv*`, `sendline` |
 
 ```bash
-# Netcat (Windows: ncat)
+# 접속
 ncat host3.dreamhack.games PORT
-
-# SSH
 ssh chall@host3.dreamhack.games -p PORT
 
-# Docker (Desktop 실행 후 Server 확인)
-docker version
+# Docker
+docker version                    # Server 줄 확인
 docker build -t name .
 docker run -it name /bin/bash
 docker pull repo:tag
 
-# 정규식 예 (#834)
-# drabcdee1am@abc.com
-
-# PHP 필터 우회 예 (#873)
-# Nickname: dnnyangyang0310
-# Password: 0@12319!+1+13
-# Command:  cat ../dream/????.txt
+# 포트 A/tcp → B/tcp 이면 접속 포트는 A
+# 웹 문제: 브라우저 http://host:port
 ```
 
-포트 `A/tcp → B/tcp` → 접속은 **A**.  
-웹 문제는 브라우저 `http://host:port`.
+Linux 명령 요약: [`linux_101/commands-cheatsheet.md`](linux_101/commands-cheatsheet.md)
 
 ---
 
-## 폴더 구조
-
-```
-.
-├── linux_101/                   # Path: Linux 101 정리
-│   ├── README.md                # 유닛 목차
-│   ├── 01~08-*.md               # 유닛별 노트
-│   └── commands-cheatsheet.md
-├── war_game/                    # 문제별: 이름_번호/
-│   ├── welcome-beginners_812/
-│   ├── exercise-ssh_875/
-│   ├── exercise-docker_876/
-│   ├── blue-whale_853/
-│   ├── ex-reg-ex_834/
-│   ├── phpreg_873/
-│   ├── baby-linux_837/
-│   ├── addition-quiz_1114/
-│   └── flag-shop_1874/
-└── log_for_study/
-    ├── 2026-08-03.md
-    ├── 2026-08-04.md
-    └── 2026-08-05.md
-```
-
-각 문제 폴더: `README.md`, `original.zip`(있을 때), 소스/스크립트.
-
----
-
-## 일자별 공부
-
-### 2026-08-05
-
-- Path: [Linux 101](https://dreamhack.io/lecture/paths/linux-101) → 정리 폴더 [linux_101/](linux_101/)
-- 워게임: [baby-linux (#837)](https://dreamhack.io/wargame/challenges/837)
-- Lab: 파일·디렉터리, 프로세스, 파일 디스크립터 (fd / pipe / grep)
-- 일자 로그: [log_for_study/2026-08-05.md](log_for_study/2026-08-05.md)
-
-### 2026-08-04
-
-- 강의: [Tips make life easier](https://dreamhack.io/lecture/units/tips-make-life-easier) — Netcat / SSH / 코딩 / Docker / 정규표현식  
-- 강의: [정규표현식 #461](https://learn.dreamhack.io/461)
-- 워게임: #812, #875, #876, #853, #834, #873
-- 자세한 메모: [log_for_study/2026-08-04.md](log_for_study/2026-08-04.md)
-
-### 2026-08-03
-
-- pwntools 기본, addition-quiz (#1114), flag-shop (#1874)
-- [log_for_study/2026-08-03.md](log_for_study/2026-08-03.md)
-
----
-
-## 실행 방법
+## 환경 설정
 
 ```bash
-# 가상환경 (처음 한 번)
+# Python 3.12 권장 (가상환경)
 python3.12 -m venv venv
-source venv/bin/activate   # Windows: venv\Scripts\activate
-pip install pwntools
+source venv/bin/activate          # Windows: venv\Scripts\activate
+pip install -r requirements.txt
 
+# 예: 자동화 스크립트
 python war_game/addition-quiz_1114/solve.py
 python war_game/flag-shop_1874/solve.py
 
-# Docker (#876)
+# Docker 실습 (#876)
 cd war_game/exercise-docker_876
 docker build -t dreamhack-docker .
 docker run -it dreamhack-docker /bin/bash
 
-# blue-whale (#853)
+# 레이어 분석 (#853) — Windows 스크립트 예시
 cd war_game/blue-whale_853
 powershell -ExecutionPolicy Bypass -File .\start-docker.ps1
 powershell -ExecutionPolicy Bypass -File .\solve.ps1
 ```
 
+`solve.py` 안의 `HOST` / `PORT` 는 인스턴스 생성 후 값으로 맞춥니다.
+
 ---
 
-## 링크
+## 문서 관례
 
-- [Dreamhack](https://dreamhack.io/)
-- [Wargame](https://dreamhack.io/wargame/)
+문제 폴더 `README.md` 에 되도록 다음을 둡니다.
+
+1. **메타** — 링크, 카테고리, 관련 로그  
+2. **한 줄 요약** — 무엇이 목적인 문제인지  
+3. **관찰** — 소스·동작·제약 (필터, 타임아웃, 레이어 등)  
+4. **절차** — 재현 가능한 단계  
+5. **왜 되는지** — 우회·성공 조건의 근거  
+
+일자 로그에는 시행착오와 강의 맥락을, 문제 폴더에는 **나중에 다시 쓸 결론**을 모읍니다.
+
+---
+
+## 참고 링크
+
+- [Dreamhack](https://dreamhack.io/) · [Wargame](https://dreamhack.io/wargame/)
 - [Linux 101 Path](https://dreamhack.io/lecture/paths/linux-101)
 - [Tips make life easier](https://dreamhack.io/lecture/units/tips-make-life-easier)
 - [정규표현식 강의 #461](https://learn.dreamhack.io/461)
+- [pwntools 문서](https://docs.pwntools.com/)
