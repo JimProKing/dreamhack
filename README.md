@@ -55,9 +55,10 @@ Linux 시스템 기초                          (linux_101 — Path 완료)
        ├─ 입력 검증 · 필터 분석             (정규식, 웹 필터)
        ├─ 프로토콜 자동화                   (pwntools, 스크립트)
        │
-       └─ 웹 기초 · 인증 상태               (web_basics)
-            HTTP/HTTPS · DevTools
-            Cookie · Session · SOP/CORS
+       └─ 웹
+            기초 · 인증 상태                 (web_basics)
+            클라이언트: XSS · CSRF
+            서버: File · SQLi · NoSQL · SSRF
 ```
 
 | 영역 | 무엇을 보나 | 노트 / 문제 |
@@ -65,6 +66,10 @@ Linux 시스템 기초                          (linux_101 — Path 완료)
 | **시스템 기초** | 경로, 권한, 프로세스, fd, 리다이렉션 | [`linux_101/`](linux_101/), [#837](https://dreamhack.io/wargame/challenges/837) |
 | **웹 기초** | HTTP 요청·응답, 브라우저, DevTools | [`web_basics/`](web_basics/), [#267](https://dreamhack.io/wargame/challenges/267) |
 | **인증 상태** | 쿠키·세션, 변조·신뢰 경계, SOP/CORS | [`web_basics/03`](web_basics/03-cookie-session.md)–[`04`](web_basics/04-sop-cors.md), [#6](https://dreamhack.io/wargame/challenges/6), [#409](https://dreamhack.io/wargame/challenges/409) |
+| **클라이언트 웹** | XSS(봇·쿠키), CSRF(권한 요청) | [#28](https://dreamhack.io/wargame/challenges/28), [#268](https://dreamhack.io/wargame/challenges/268), [#26](https://dreamhack.io/wargame/challenges/26), [#269](https://dreamhack.io/wargame/challenges/269) · [log 08-07](log_for_study/2026-08-07.md) |
+| **파일 취약** | 업로드 실행, 경로 조작 다운로드 | [#38](https://dreamhack.io/wargame/challenges/38), [#37](https://dreamhack.io/wargame/challenges/37) |
+| **주입** | SQLi 따옴표, Blind, NoSQL `$regex` | [#24](https://dreamhack.io/wargame/challenges/24), [#90](https://dreamhack.io/wargame/challenges/90) |
+| **SSRF** | 서버 대신 내부 URL·포트 | [#75](https://dreamhack.io/wargame/challenges/75) |
 | **원격 상호작용** | TCP 접속, 원격 셸, 포트 매핑 | [#812](https://dreamhack.io/wargame/challenges/812), [#875](https://dreamhack.io/wargame/challenges/875) |
 | **컨테이너** | 이미지 레이어, whiteout, 잔존 데이터 | [#876](https://dreamhack.io/wargame/challenges/876), [#853](https://dreamhack.io/wargame/challenges/853) |
 | **입력 검증** | 정규식 분해, 필터 우회 조건 | [#834](https://dreamhack.io/wargame/challenges/834), [#873](https://dreamhack.io/wargame/challenges/873) |
@@ -90,6 +95,17 @@ Linux 시스템 기초                          (linux_101 — Path 완료)
 | [267](https://dreamhack.io/wargame/challenges/267) | devtools-sources | Web / DevTools | Sources 패널 리소스 관찰 *(유닛 연계)* |
 | [6](https://dreamhack.io/wargame/challenges/6) | cookie | Web / Cookie | 쿠키 인증·변조 *(유닛 연계)* |
 | [409](https://dreamhack.io/wargame/challenges/409) | session-basic | Web / Session | 세션 + 쿠키 ID *(유닛 연계)* |
+| [28](https://dreamhack.io/wargame/challenges/28) | xss-1 | XSS | 봇 쿠키 → memo |
+| [268](https://dreamhack.io/wargame/challenges/268) | xss-2 | XSS | script 필터 → onerror |
+| [38](https://dreamhack.io/wargame/challenges/38) | image-storage | File Upload | php 웹쉘 |
+| [37](https://dreamhack.io/wargame/challenges/37) | file-download-1 | Path Traversal | `../flag.py` |
+| [24](https://dreamhack.io/wargame/challenges/24) | simple_sqli | SQLi | `admin";--` (`"` 쿼리) |
+| [26](https://dreamhack.io/wargame/challenges/26) | csrf-1 | CSRF | notice_flag → memo |
+| [269](https://dreamhack.io/wargame/challenges/269) | csrf-2 | CSRF | change_password → 로그인 |
+| [90](https://dreamhack.io/wargame/challenges/90) | Mango | NoSQL | `$regex` + dh 필터 우회 |
+| [75](https://dreamhack.io/wargame/challenges/75) | web-ssrf | SSRF | `2130706433` + 포트 스캔 |
+
+상세 정리: [log_for_study/2026-08-07.md](log_for_study/2026-08-07.md)
 
 ---
 
@@ -97,6 +113,7 @@ Linux 시스템 기초                          (linux_101 — Path 완료)
 
 | 날짜 | 요약 | 로그 |
 |------|------|------|
+| 2026-08-07 | XSS·File·SQLi·CSRF·NoSQL·SSRF 웹 취약점 | [log](log_for_study/2026-08-07.md) |
 | 2026-08-06 | Linux 101 Path 완료, 웹 기초, Cookie·Session·SOP | [log](log_for_study/2026-08-06.md) |
 | 2026-08-05 | Linux 101 Path, Lab(파일·프로세스·fd), baby-linux | [log](log_for_study/2026-08-05.md) |
 | 2026-08-04 | Tips (nc/SSH/Docker/regex), 입문 워게임 6문제 | [log](log_for_study/2026-08-04.md) |

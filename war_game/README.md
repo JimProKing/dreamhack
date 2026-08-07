@@ -20,6 +20,17 @@ Dreamhack 워게임 단위 분석·풀이 모음입니다.
 | [837](https://dreamhack.io/wargame/challenges/837) | [baby-linux_837](baby-linux_837/) | Linux | 글로브, 출력 채널 | app.py, README |
 | [1114](https://dreamhack.io/wargame/challenges/1114) | [addition-quiz_1114](addition-quiz_1114/) | Misc | 시간 제약 자동화 | solve.py, chall.c |
 | [1874](https://dreamhack.io/wargame/challenges/1874) | [flag-shop_1874](flag-shop_1874/) | Misc | 상태 추적 자동화 | solve.py |
+| [28](https://dreamhack.io/wargame/challenges/28) | — | XSS | 봇 쿠키 → memo | [log 08-07](../log_for_study/2026-08-07.md) |
+| [268](https://dreamhack.io/wargame/challenges/268) | — | XSS | onerror 우회 | [log 08-07](../log_for_study/2026-08-07.md) |
+| [38](https://dreamhack.io/wargame/challenges/38) | — | File Upload | php 웹쉘 | [log 08-07](../log_for_study/2026-08-07.md) |
+| [37](https://dreamhack.io/wargame/challenges/37) | — | Path Traversal | `../flag.py` | [log 08-07](../log_for_study/2026-08-07.md) |
+| [24](https://dreamhack.io/wargame/challenges/24) | — | SQLi | `admin";--` | [log 08-07](../log_for_study/2026-08-07.md) |
+| [26](https://dreamhack.io/wargame/challenges/26) | — | CSRF | notice_flag → memo | [log 08-07](../log_for_study/2026-08-07.md) |
+| [269](https://dreamhack.io/wargame/challenges/269) | — | CSRF | 비번 변경 후 로그인 | [log 08-07](../log_for_study/2026-08-07.md) |
+| [90](https://dreamhack.io/wargame/challenges/90) | — | NoSQL | `$regex` / 필터 | [log 08-07](../log_for_study/2026-08-07.md) |
+| [75](https://dreamhack.io/wargame/challenges/75) | — | SSRF | 내부 IP·포트 | [log 08-07](../log_for_study/2026-08-07.md) |
+
+폴더 README 미분리 문제는 일자 로그에 절차·근거를 모아 둠. 필요 시 `{slug}_{id}/` 로 옮긴다.
 
 ---
 
@@ -60,6 +71,19 @@ Dreamhack 워게임 단위 분석·풀이 모음입니다.
 |------|---------|
 | addition-quiz | 반복 산술 응답, 타임아웃 → `pwntools` / 소켓 루프 |
 | flag-shop | 메뉴·셔플 상태 추적 후 인덱스 선택 자동화 |
+
+### 웹 취약 (2026-08-07)
+
+| 문제 | 보는 것 |
+|------|---------|
+| xss-1 / xss-2 | 봇 브라우저 실행, memo로 유출, script 필터 우회 |
+| image-storage / file-download-1 | 업로드 실행 · `../` 경로 |
+| simple_sqli | 쿼리 따옴표 종류, 주석으로 조건 제거 |
+| csrf-1 / csrf-2 | img GET으로 권한 요청 (memo vs 비번 변경) |
+| Mango | Mongo `$regex`, 금칙어 필터 |
+| web-ssrf | 서버 대신 내부 요청, IP 표기·포트 스캔 |
+
+상세: [`../log_for_study/2026-08-07.md`](../log_for_study/2026-08-07.md)
 
 ---
 
