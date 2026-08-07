@@ -1,46 +1,28 @@
 # dreamhack
 
-[Dreamhack](https://dreamhack.io/) 강의·Path·워게임을 풀며, **동작 원리와 재현 절차**를 남기는 학습 노트 저장소입니다.
+[Dreamhack](https://dreamhack.io/) 강의·Path·워게임 공부 메모.
 
-목표 점수가 아니라 **왜 되는지 / 어디서 막히는지 / 어떻게 다시 확인하는지**를 남깁니다.  
+점수보다 **왜 되는지 / 어디서 막히는지** 를 적어 두는 쪽.  
 시작: 2026-08-03
 
----
-
-## 학습 원칙
-
-| 원칙 | 의미 |
-|------|------|
-| 메커니즘 우선 | 플래그보다 필터, 레이어, 권한, fd, 프로토콜이 어떻게 동작하는지 |
-| 재현 가능 | 다른 날에도 같은 순서로 검증할 수 있게 명령·경로·조건을 고정 |
-| 관찰 → 가설 → 검증 | 추측만 쓰지 않고, 출력·소스·레이어로 확인한 뒤 기록 |
-| 자동화는 도구 | 반복 입출력·시간 제약은 스크립트로 두고, 핵심 이해는 문서로 |
-
-세부 일지는 `log_for_study/`, 재사용 노트는 `linux_101/` · `web_basics/`, 문제 단위 산출물은 `war_game/` 에 둡니다.
-
----
-
-## 저장소 구조
-
 ```text
-.
-├── README.md                 # 이 문서 (맵 + 관례)
-├── requirements.txt          # Python 의존성
-├── linux_101/                # Linux 101 Path — 시스템 기초 (완료)
-├── web_basics/               # 웹·HTTP·쿠키·세션·SOP
-├── war_game/                 # 워게임 단위 분석·풀이 (이름_번호/)
-└── log_for_study/            # 일자별 학습 로그
+log_for_study/   그날 뭐 했는지
+linux_101/       리눅스 Path 정리 (여러 번 봄)
+web_basics/      웹·쿠키·세션 정리
+war_game/        문제별 폴더 (이름_번호/)
 ```
 
-| 경로 | 역할 |
-|------|------|
-| [`linux_101/`](linux_101/) | 셸, 파일·권한, 프로세스, fd, 사용자 — **시스템 관찰의 공통 기반** |
-| [`web_basics/`](web_basics/) | HTTP/HTTPS, DevTools, Cookie·Session, SOP/CORS |
-| [`war_game/`](war_game/) | 문제별 소스, 스크립트, 분석 메모. 인덱스: [`war_game/README.md`](war_game/README.md) |
-| [`log_for_study/`](log_for_study/) | 그날 한 일, 시행착오, 강의 정리. 관례: [`log_for_study/README.md`](log_for_study/README.md) |
+문제 폴더 예: `blue-whale_853/`, `baby-linux_837/`  
+맵: [`war_game/README.md`](war_game/README.md)
 
-문제 폴더 이름: `{slug}_{challenge_id}/`  
-예: `blue-whale_853/`, `baby-linux_837/`
+적어 둘 때 대충 이렇게:
+
+| 습관 | 의미 |
+|------|------|
+| 메커니즘 먼저 | 플래그보다 필터·레이어·권한·fd·쿼리가 어떻게 도는지 |
+| 다시 칠 수 있게 | 명령·경로·조건을 남겨 둠 |
+| 보고 → 추측 → 확인 | 추측만 쓰지 않고 출력·소스로 검증 |
+| 스크립트는 도구 | 반복 작업은 코드, 이해는 문서 |
 
 ---
 
@@ -158,7 +140,7 @@ Linux 명령 요약: [`linux_101/commands-cheatsheet.md`](linux_101/commands-che
 ## 환경 설정
 
 ```bash
-# Python 3.12 권장 (가상환경)
+# Python 3.12 + venv
 python3.12 -m venv venv
 source venv/bin/activate          # Windows: venv\Scripts\activate
 pip install -r requirements.txt
@@ -178,21 +160,9 @@ powershell -ExecutionPolicy Bypass -File .\start-docker.ps1
 powershell -ExecutionPolicy Bypass -File .\solve.ps1
 ```
 
-`solve.py` 안의 `HOST` / `PORT` 는 인스턴스 생성 후 값으로 맞춥니다.
+`solve.py` 의 `HOST` / `PORT` 는 서버 띄운 뒤 값으로 바꾸면 됨.
 
----
-
-## 문서 관례
-
-문제 폴더 `README.md` 에 되도록 다음을 둡니다.
-
-1. **메타** — 링크, 카테고리, 관련 로그  
-2. **한 줄 요약** — 무엇이 목적인 문제인지  
-3. **관찰** — 소스·동작·제약 (필터, 타임아웃, 레이어 등)  
-4. **절차** — 재현 가능한 단계  
-5. **왜 되는지** — 우회·성공 조건의 근거  
-
-일자 로그에는 시행착오와 강의 맥락을, 주제 폴더(`linux_101/`, `web_basics/`)와 문제 폴더에는 **나중에 다시 쓸 결론**을 모읍니다.
+문제 폴더 README 에 있으면 좋은 것: 링크, 한 줄 요약, 관찰(필터·제약), 풀이 순서, 왜 되는지.
 
 ---
 
