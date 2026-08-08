@@ -27,8 +27,13 @@ chmod +x run_gdb.sh
 ./run_gdb.sh
 ```
 
-첫 실행은 `ubuntu` 이미지·`gdb` 설치로 1~2분 걸릴 수 있다.  
-끝나면 프롬프트가 `(gdb)` 가 된다.
+첫 실행은 `Dockerfile.gdb` 로 이미지 빌드(1~3분).  
+**프롬프트가 `(gdb)` 로 바뀌면** 그다음에만 GDB 명령을 친다.
+
+```text
+Mac 셸:   MacBook...$     ← 여기다 break / run 치면 안 됨
+GDB:      (gdb)          ← 여기다 침
+```
 
 ---
 
