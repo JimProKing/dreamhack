@@ -82,6 +82,7 @@
 | System Hacking Linux Advanced | [path](https://dreamhack.io/lecture/paths/system-hacking-advanced) | 심화 |
 | How to Use Ghidra | [path](https://dreamhack.io/lecture/paths/reverse-engineering-ghidra) | 리버싱 입문 |
 | Linux Kernel Hacking Basics | [path](https://dreamhack.io/lecture/paths/linux-kernel-hacking-basic) | 상위 |
+| Tool: GDB (관련 유닛) | Learn에서 gdb 검색 | 로컬 노트 [gdb/](../gdb/) |
 
 ### 기타 (나중에)
 
@@ -95,6 +96,7 @@ Cryptography, Cloud (AWS/GCP/Azure/K8s), Mobile (iOS/Frida), Blockchain, Hardwar
 |------|------------|------|
 | `log_for_study/` | — | 그날 한 일, 시행착오 |
 | `linux_101/` | Linux 101 Path | 시스템 관찰 기초 |
+| `gdb/` | Tool: gdb 등 | 디버거·메모리 관찰 |
 | `web_basics/` | 웹 기초·쿠키 유닛 | 프로토콜·브라우저·인증 상태 |
 | `web_hacking/` | 웹 취약 유닛·Exercise | 취약 유형별 메커니즘·절차 |
 | `security_awareness/` | Security Awareness Path | 인식·예방·대응 |
@@ -111,10 +113,11 @@ Cryptography, Cloud (AWS/GCP/Azure/K8s), Mobile (iOS/Frida), Blockchain, Hardwar
 [완료] 보안 인식 Path
 [완료] Linux 101
 [완료] 웹 기초 + 클라이언트/서버 취약 입문
+[정리] GDB 노트 (gdb/)
         │
         ▼
-  A) System Hacking Fundamental   ← 뇌 환기 + 리눅스 연결
-  B) 웹 심화 (Blind advanced, WAF 등)  ← 멘탈 여유 있을 때
+  A) GDB 손에 익히기 + System Hacking Fundamental
+  B) 웹 심화 (Blind advanced, WAF 등)
   C) Ghidra / 리버싱 입문
 ```
 

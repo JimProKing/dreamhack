@@ -14,6 +14,7 @@
 lecture/                 Learn 지도 (Path·진도·추천 순서)
 log_for_study/           일자별 학습 기록
 linux_101/               Linux 101 Path
+gdb/                     GDB (디버거) 노트
 web_basics/              웹, 쿠키, 세션, SOP/CORS
 web_hacking/             웹 취약 유형 (XSS, CSRF, 파일, 주입, SSRF)
 security_awareness/      Security Awareness Training Path
@@ -21,7 +22,7 @@ war_game/                문제 단위 자료 ({이름}_{번호}/)
 requirements.txt         Python 의존성
 ```
 
-강의 전체 맵: [lecture/README.md](lecture/README.md)  
+강의 전체 맵: [lecture/README.md](lecture/README.md) · GDB: [gdb/](gdb/README.md)  
 문제 디렉터리 명명: `{slug}_{id}/` (예: `blue-whale_853/`). 목록: [war_game/README.md](war_game/README.md)
 
 ### 기록 기준
@@ -61,6 +62,7 @@ Linux 기초                        (linux_101 — 완료)
 | Learn 지도 | Path 분류, 진도 규칙, 추천 순서 | [lecture/](lecture/) |
 | 보안 인식 | 사회공학, 계정, 악성코드, 데이터·물리, AI | [security_awareness/](security_awareness/) |
 | 시스템 | 경로, 권한, 프로세스, 파일 디스크립터 | [linux_101/](linux_101/), [#837](https://dreamhack.io/wargame/challenges/837) |
+| 디버깅 | 중단·레지스터·메모리·스택 관찰 | [gdb/](gdb/) |
 | 웹 기초 | HTTP, 브라우저, DevTools | [web_basics/](web_basics/), [#267](https://dreamhack.io/wargame/challenges/267) |
 | 인증 상태 | 쿠키, 세션, SOP/CORS | [web_basics/03](web_basics/03-cookie-session.md)–[04](web_basics/04-sop-cors.md) |
 | 웹 취약 | XSS, CSRF, 파일, 주입, SSRF | [web_hacking/](web_hacking/) |
@@ -130,6 +132,7 @@ Linux 기초                        (linux_101 — 완료)
 | 정규식 | 검증·필터 분석 | `\w`, `\d` |
 | pwntools | 프로세스·소켓 I/O | `remote()`, `sendline` |
 | DevTools | 요청, 쿠키, 스크립트 | Network, Application, Sources |
+| GDB | 네이티브 프로세스 디버깅 | [gdb/](gdb/README.md), [cheatsheet](gdb/cheatsheet.md) |
 
 ```bash
 ncat host3.dreamhack.games PORT
@@ -143,7 +146,7 @@ docker run -it name /bin/bash
 # 웹: http://host:port
 ```
 
-보충: [lecture/](lecture/README.md), [linux_101/](linux_101/commands-cheatsheet.md), [web_basics/](web_basics/README.md), [web_hacking/](web_hacking/README.md), [security_awareness/](security_awareness/README.md)
+보충: [lecture/](lecture/README.md), [gdb/](gdb/README.md), [linux_101/](linux_101/commands-cheatsheet.md), [web_basics/](web_basics/README.md), [web_hacking/](web_hacking/README.md), [security_awareness/](security_awareness/README.md)
 
 ---
 
