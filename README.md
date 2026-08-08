@@ -11,16 +11,18 @@
 ## 구성
 
 ```text
+lecture/                 Learn 지도 (Path·진도·추천 순서)
 log_for_study/           일자별 학습 기록
 linux_101/               Linux 101 Path
 web_basics/              웹, 쿠키, 세션, SOP/CORS
+web_hacking/             웹 취약 유형 (XSS, CSRF, 파일, 주입, SSRF)
 security_awareness/      Security Awareness Training Path
 war_game/                문제 단위 자료 ({이름}_{번호}/)
 requirements.txt         Python 의존성
 ```
 
-문제 디렉터리 명명: `{slug}_{id}/` (예: `blue-whale_853/`).  
-목록: [war_game/README.md](war_game/README.md)
+강의 전체 맵: [lecture/README.md](lecture/README.md)  
+문제 디렉터리 명명: `{slug}_{id}/` (예: `blue-whale_853/`). 목록: [war_game/README.md](war_game/README.md)
 
 ### 기록 기준
 
@@ -49,16 +51,19 @@ Linux 기초                        (linux_101 — 완료)
        │
        └── 웹
             기초                   web_basics
+            취약 유형              web_hacking
             클라이언트             XSS, CSRF
             서버                   파일, SQLi, NoSQL, SSRF
 ```
 
 | 영역 | 내용 | 노트 / 문제 |
 |------|------|-------------|
+| Learn 지도 | Path 분류, 진도 규칙, 추천 순서 | [lecture/](lecture/) |
 | 보안 인식 | 사회공학, 계정, 악성코드, 데이터·물리, AI | [security_awareness/](security_awareness/) |
 | 시스템 | 경로, 권한, 프로세스, 파일 디스크립터 | [linux_101/](linux_101/), [#837](https://dreamhack.io/wargame/challenges/837) |
 | 웹 기초 | HTTP, 브라우저, DevTools | [web_basics/](web_basics/), [#267](https://dreamhack.io/wargame/challenges/267) |
 | 인증 상태 | 쿠키, 세션, SOP/CORS | [web_basics/03](web_basics/03-cookie-session.md)–[04](web_basics/04-sop-cors.md) |
+| 웹 취약 | XSS, CSRF, 파일, 주입, SSRF | [web_hacking/](web_hacking/) |
 | 클라이언트 웹 | XSS, CSRF | [#28](https://dreamhack.io/wargame/challenges/28), [#268](https://dreamhack.io/wargame/challenges/268), [#26](https://dreamhack.io/wargame/challenges/26), [#269](https://dreamhack.io/wargame/challenges/269) |
 | 파일 | 업로드 실행, 경로 조작 다운로드 | [#38](https://dreamhack.io/wargame/challenges/38), [#37](https://dreamhack.io/wargame/challenges/37) |
 | 주입 | SQLi, Blind, NoSQL `$regex` | [#24](https://dreamhack.io/wargame/challenges/24), [#90](https://dreamhack.io/wargame/challenges/90) |
@@ -96,7 +101,7 @@ Linux 기초                        (linux_101 — 완료)
 | [90](https://dreamhack.io/wargame/challenges/90) | Mango | NoSQL | `$regex`, 요청 필터 |
 | [75](https://dreamhack.io/wargame/challenges/75) | web-ssrf | SSRF | loopback 표기, 포트 탐색 |
 
-웹 취약점 정리: [log_for_study/2026-08-07.md](log_for_study/2026-08-07.md)
+웹 취약점: [web_hacking/](web_hacking/) · [log 2026-08-07](log_for_study/2026-08-07.md)
 
 ---
 
@@ -138,7 +143,7 @@ docker run -it name /bin/bash
 # 웹: http://host:port
 ```
 
-보충: [linux_101/commands-cheatsheet.md](linux_101/commands-cheatsheet.md), [web_basics/](web_basics/README.md), [security_awareness/](security_awareness/README.md)
+보충: [lecture/](lecture/README.md), [linux_101/](linux_101/commands-cheatsheet.md), [web_basics/](web_basics/README.md), [web_hacking/](web_hacking/README.md), [security_awareness/](security_awareness/README.md)
 
 ---
 
@@ -165,7 +170,7 @@ docker run -it dreamhack-docker /bin/bash
 
 ## 참고
 
-- [Dreamhack](https://dreamhack.io/) · [Wargame](https://dreamhack.io/wargame/)
+- [Dreamhack Learn](https://dreamhack.io/lecture) · [Paths](https://dreamhack.io/lecture/paths) · [Wargame](https://dreamhack.io/wargame/)
 - [Security Awareness Training](https://dreamhack.io/lecture/paths/security-awareness-training)
 - [Linux 101](https://dreamhack.io/lecture/paths/linux-101)
 - [웹 기초](https://dreamhack.io/lecture/units/webhacking-basic-knowledeges)

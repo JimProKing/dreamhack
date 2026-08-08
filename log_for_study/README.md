@@ -2,7 +2,7 @@
 
 날짜별로 그날 공부한 것. 시행착오·강의 맥락 위주.
 
-다시 쓸 결론은 `war_game/` · `linux_101/` · `web_basics/` · `security_awareness/` 쪽으로 옮기는 편.
+다시 쓸 결론은 `war_game/` · `linux_101/` · `web_basics/` · `web_hacking/` · `security_awareness/` · `lecture/` 쪽으로 옮기는 편.
 
 | 파일 | 요약 |
 |------|------|
