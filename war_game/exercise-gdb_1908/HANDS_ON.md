@@ -8,32 +8,38 @@
 
 ---
 
-## 0. 한 번만 준비
-
-1. **Rancher Desktop** 또는 **Docker Desktop** 실행  
-2. 터미널에서 확인:
-
-```bash
-docker info
-```
-
-에러 없이 Server 정보가 나오면 됨.
-
-3. 이 폴더에서:
+## 0. 추천: 단계별 마법사
 
 ```bash
 cd /Users/chan/Desktop/dreamhack/war_game/exercise-gdb_1908
-chmod +x run_gdb.sh
-./run_gdb.sh
+./go.sh
 ```
 
-첫 실행은 `Dockerfile.gdb` 로 이미지 빌드(1~3분).  
-**프롬프트가 `(gdb)` 로 바뀌면** 그다음에만 GDB 명령을 친다.
+메뉴:
 
-```text
-Mac 셸:   MacBook...$     ← 여기다 break / run 치면 안 됨
-GDB:      (gdb)          ← 여기다 침
+| 키 | 내용 |
+|----|------|
+| `0` | Docker·이미지 준비 |
+| `1` | main 디스어셈 보기 |
+| `2` | flag1 자동 구하기 |
+| `3` | flag2 조건 설명 |
+| `4` | flag2 우회 후 구하기 |
+| `5` | 직접 `(gdb)` 치기 |
+| `a` | 0→4 한 번에 |
+| `q` | 종료 |
+
+**GDB 명령은 메뉴가 연 세션 안에서만.**  
+Mac 프롬프트 `chan$` 에 `break` 치면 안 된다.
+
+### Docker 켜기 (한 번)
+
+```bash
+open -a "Docker"
+# 안정될 때까지 기다린 뒤
+docker info
 ```
+
+`./go.sh` 첫 실행 시 GDB 이미지 빌드(1~3분).
 
 ---
 
