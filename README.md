@@ -102,8 +102,10 @@ Linux 기초                        (linux_101 — 완료)
 | [269](https://dreamhack.io/wargame/challenges/269) | csrf-2 | CSRF | 비밀번호 변경 후 로그인 |
 | [90](https://dreamhack.io/wargame/challenges/90) | Mango | NoSQL | `$regex`, 요청 필터 |
 | [75](https://dreamhack.io/wargame/challenges/75) | web-ssrf | SSRF | loopback 표기, 포트 탐색 |
+| [1908](https://dreamhack.io/wargame/challenges/1908) | exercise-gdb | GDB | flag_1 RAX, 조건 우회 flag_2 |
 
-웹 취약점: [web_hacking/](web_hacking/) · [log 2026-08-07](log_for_study/2026-08-07.md)
+웹 취약점: [web_hacking/](web_hacking/) · [log 2026-08-07](log_for_study/2026-08-07.md)  
+GDB 연습: [war_game/exercise-gdb_1908/](war_game/exercise-gdb_1908/) · [gdb/](gdb/)
 
 ---
 

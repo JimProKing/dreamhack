@@ -29,6 +29,7 @@ Dreamhack 워게임 단위 분석·풀이 모음입니다.
 | [269](https://dreamhack.io/wargame/challenges/269) | — | CSRF | 비번 변경 후 로그인 | [log 08-07](../log_for_study/2026-08-07.md) |
 | [90](https://dreamhack.io/wargame/challenges/90) | — | NoSQL | `$regex` / 필터 | [log 08-07](../log_for_study/2026-08-07.md) |
 | [75](https://dreamhack.io/wargame/challenges/75) | — | SSRF | 내부 IP·포트 | [log 08-07](../log_for_study/2026-08-07.md) |
+| [1908](https://dreamhack.io/wargame/challenges/1908) | [exercise-gdb_1908](exercise-gdb_1908/) | GDB | flag_1 RAX, 조건 우회 후 flag_2 | README, solve.py |
 
 폴더 README 미분리 문제는 일자 로그에 절차·근거를 모아 둠. 필요 시 `{slug}_{id}/` 로 옮긴다.
 
@@ -71,6 +72,12 @@ Dreamhack 워게임 단위 분석·풀이 모음입니다.
 |------|---------|
 | addition-quiz | 반복 산술 응답, 타임아웃 → `pwntools` / 소켓 루프 |
 | flag-shop | 메뉴·셔플 상태 추적 후 인덱스 선택 자동화 |
+
+### GDB
+
+| 문제 | 보는 것 |
+|------|---------|
+| exercise-gdb (#1908) | 반환값(RAX), 전역 조건 우회, 안티 디스어셈 후 루프 상수 |
 
 ### 웹 취약 (2026-08-07)
 
