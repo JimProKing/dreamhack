@@ -14,10 +14,11 @@
 ## 폴더
 
 ```text
-📁 log_for_study/   그날 뭐 했는지
-🐧 linux_101/       리눅스 Path 정리 (여러 번 봄)
-🌐 web_basics/      웹·쿠키·세션 정리
-🚩 war_game/        문제별 폴더 (이름_번호/)
+📁 log_for_study/          그날 뭐 했는지
+🐧 linux_101/              리눅스 Path 정리
+🌐 web_basics/             웹·쿠키·세션 정리
+🛡️ security_awareness/    보안 인식 Path 정리
+🚩 war_game/               문제별 폴더 (이름_번호/)
 ```
 
 문제 폴더 예: `blue-whale_853/`, `baby-linux_837/`  
@@ -37,6 +38,9 @@
 ## 다루는 영역
 
 ```text
+🛡️ 보안 인식                              (security_awareness — Path 완료)
+  일상·사고·예방·대응 (사람·데이터·물리·AI)
+
 🐧 Linux 시스템 기초                    (linux_101 — Path 완료)
   └─ 셸 · 파일/권한 · 프로세스 · fd/pipe · 사용자
        │
@@ -53,6 +57,7 @@
 
 | | 영역 | 무엇을 보나 | 노트 / 문제 |
 |--|------|-------------|-------------|
+| 🛡️ | **보안 인식** | 사회공학, 계정, 악성코드, 데이터·물리, AI | [`security_awareness/`](security_awareness/) |
 | 🐧 | **시스템 기초** | 경로, 권한, 프로세스, fd | [`linux_101/`](linux_101/), [#837](https://dreamhack.io/wargame/challenges/837) |
 | 🌐 | **웹 기초** | HTTP, 브라우저, DevTools | [`web_basics/`](web_basics/), [#267](https://dreamhack.io/wargame/challenges/267) |
 | 🍪 | **인증 상태** | 쿠키·세션, SOP/CORS | [`web_basics/03`](web_basics/03-cookie-session.md)–[`04`](web_basics/04-sop-cors.md) |
@@ -101,6 +106,7 @@
 
 | 날짜 | 요약 | |
 |------|------|--|
+| 2026-08-08 | Security Awareness Training Path 완료 | [log](log_for_study/2026-08-08.md) |
 | 2026-08-07 | XSS·File·SQLi·CSRF·NoSQL·SSRF | [log](log_for_study/2026-08-07.md) |
 | 2026-08-06 | Linux 101 완료, 웹 기초, Cookie·Session | [log](log_for_study/2026-08-06.md) |
 | 2026-08-05 | Linux Lab, baby-linux | [log](log_for_study/2026-08-05.md) |
@@ -134,7 +140,7 @@ docker run -it name /bin/bash
 # 웹: http://host:port  + F12
 ```
 
-🐧 [linux_101/commands-cheatsheet.md](linux_101/commands-cheatsheet.md) · 🌐 [web_basics/](web_basics/README.md)
+🐧 [linux_101](linux_101/commands-cheatsheet.md) · 🌐 [web_basics](web_basics/README.md) · 🛡️ [security_awareness](security_awareness/README.md)
 
 ---
 
@@ -162,6 +168,7 @@ docker run -it dreamhack-docker /bin/bash
 ## 링크
 
 - 🏠 [Dreamhack](https://dreamhack.io/) · 🚩 [Wargame](https://dreamhack.io/wargame/)
+- 🛡️ [Security Awareness Training](https://dreamhack.io/lecture/paths/security-awareness-training)
 - 🐧 [Linux 101 Path](https://dreamhack.io/lecture/paths/linux-101)
 - 🌐 [웹 기초 지식](https://dreamhack.io/lecture/units/webhacking-basic-knowledeges)
 - 🍪 [Cookie & Session](https://dreamhack.io/lecture/units/webhacking-cookie-session)
